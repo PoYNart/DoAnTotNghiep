@@ -1,0 +1,53 @@
+// build.gradle (Module: app) (PHIÊN BẢN ỔN ĐỊNH CUỐI CÙNG)
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'}
+
+android {
+    compileSdk 33 // Nâng lên 33 để tương thích thư viện mới
+    namespace "com.programminghut.realtime_object"
+
+    defaultConfig {
+        applicationId "com.programminghut.realtime_object"
+        minSdk 24 // Nâng minSdk lên 24
+        targetSdk 33 // Nâng lên 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    // =====================================================================================
+    // SỬ DỤNG PHIÊN BẢN TFLITE MỚI NHẤT VÀ ỔN ĐỊNH NHẤT (0.4.4)
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.4.4'
+    // =====================================================================================
+}

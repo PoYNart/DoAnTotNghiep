@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.programminghut.realtime_object">
+
+    <!-- Yêu cầu quyền sử dụng Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!--
+    KHAI BÁO BỔ SUNG:
+    Báo cho hệ thống biết ứng dụng này CẦN phần cứng camera để hoạt động.
+    Đây chính là dòng sửa lỗi cảnh báo của bạn.
+    -->
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Realtime_object">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+    
