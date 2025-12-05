@@ -1,16 +1,18 @@
-// build.gradle (Module: app) (PHIÊN BẢN ỔN ĐỊNH CUỐI CÙNG)
+// File: build.gradle (Module: app) - PHIÊN BẢN ĐÃ DỌN DẸP
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'}
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
 
 android {
-    compileSdk 33 // Nâng lên 33 để tương thích thư viện mới
+    compileSdk 34
     namespace "com.programminghut.realtime_object"
 
     defaultConfig {
         applicationId "com.programminghut.realtime_object"
-        minSdk 24 // Nâng minSdk lên 24
-        targetSdk 33 // Nâng lên 33
+        minSdk 24
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -44,10 +46,26 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.activity:activity:1.8.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
 
-    // =====================================================================================
-    // SỬ DỤNG PHIÊN BẢN TFLITE MỚI NHẤT VÀ ỔN ĐỊNH NHẤT (0.4.4)
+    // Thư viện TensorFlow Lite
     implementation 'org.tensorflow:tensorflow-lite-support:0.4.4'
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.4.4'
-    // =====================================================================================
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:32.7.0')
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
+
+    // Glide (Tải ảnh)
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // ================== CLOUDINARY (CHỈ GIỮ LẠI THƯ VIỆN CHÍNH) ==================
+    implementation 'com.cloudinary:cloudinary-android:2.4.0'
+    // implementation 'com.cloudinary:cloudinary-core:1.36.0' // XÓA DÒNG NÀY
+    // implementation 'com.cloudinary:cloudinary-transformation:2.4.0' // XÓA DÒNG NÀY
+    // =====================================================================
+
 }

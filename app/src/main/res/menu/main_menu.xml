@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Avatar người dùng -->
+    <item
+        android:id="@+id/menu_user_avatar"
+        android:icon="@drawable/ic_user_avatar"
+        android:title="User"
+        app:showAsAction="ifRoom">
+
+        <!-- Menu con (sổ xuống) -->
+        <menu>
+            <item
+                android:id="@+id/menu_admin_panel"
+                android:title="Trang Admin"
+                android:visible="false" />
+
+            <!-- =================================== -->
+            <!--   THÊM MỤC "ĐỔI MẬT KHẨU" VÀO ĐÂY   -->
+            <!-- =================================== -->
+            <item
+                android:id="@+id/menu_change_password"
+                android:title="Đổi mật khẩu" />
+
+            <item
+                android:id="@+id/menu_history"
+                android:title="Lịch sử" />
+            <item
+                android:id="@+id/menu_logout"
+                android:title="Đăng xuất" />
+
+            <item
+                android:id="@+id/menu_user_email"
+                android:title="Xin chào"
+                android:enabled="false" />
+        </menu>
+    </item>
+</menu>

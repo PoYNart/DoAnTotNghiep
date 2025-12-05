@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.programminghut.realtime_object">
-
-    <!-- Yêu cầu quyền sử dụng Camera -->
+    <!-- KHAI BÁO CÁC QUYỀN CẦN THIẾT -->
     <uses-permission android:name="android.permission.CAMERA" />
-
-    <!--
-    KHAI BÁO BỔ SUNG:
-    Báo cho hệ thống biết ứng dụng này CẦN phần cứng camera để hoạt động.
-    Đây chính là dòng sửa lỗi cảnh báo của bạn.
-    -->
-    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- KHAI BÁO TÍNH NĂNG CẦN THIẾT -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <application
+        android:name=".MyApplication"
         android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Realtime_object">
+        android:theme="@style/Theme.Realtime_object_detectionmain"
+        tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false" /> <!-- LoginActivity là màn hình khởi động -->
+        <activity
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity> <!-- MainActivity không còn là màn hình khởi động -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
-    
